@@ -20,5 +20,10 @@ module "vpc" {
 
 module "s3_scripts" {
   source = "./modules/s3_scripts"
-  name   = var.name_s3_scripts
+  name = var.name_s3_scripts
+}
+
+module "iam" {
+  source = "./modules/iam"
+  app_name = var.name
 }

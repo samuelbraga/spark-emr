@@ -24,3 +24,19 @@ output "s3_scripts_id" {
   description = "id s3 scripts"
   value = module.s3_scripts.s3_id
 }
+
+# IAM
+output "emr_service_role" {
+  description = "service role EMR"
+  value = module.iam.emr_service_role
+}
+
+output "emr_autoscaling_role" {
+  description = "autoscaling role EMR"
+  value = module.iam.emr_autoscaling_role
+}
+
+output "emr_ec2_instance_profile" {
+  description = "ec2 role EMR"
+  value = module.iam.emr_ec2_instance_profile
+}
