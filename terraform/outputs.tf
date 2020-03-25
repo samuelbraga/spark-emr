@@ -40,3 +40,20 @@ output "emr_ec2_instance_profile" {
   description = "ec2 role EMR"
   value = module.iam.emr_ec2_instance_profile
 }
+
+# SECURITY
+output "master_security_group_id" {
+  description = "master security group id"
+  value = module.security-group-master.this_security_group_id
+}
+
+output "slave_security_group_id" {
+  description = "slave security group id"
+  value = module.security-group-slave.this_security_group_id
+}
+
+# KEY
+output "key_name" {
+  description = "key pais name"
+  value = module.key_pair.key_name
+}

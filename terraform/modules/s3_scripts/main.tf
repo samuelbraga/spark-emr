@@ -3,8 +3,8 @@ resource "aws_s3_bucket" "s3_scripts" {
   acl    = "private"
 
   tags = {
-    Name        = "Bucket for EMR Bootstrap actions/Steps"
-    Environment = "Scripts"
+    Name        = var.name
+    Description = "Bucket for EMR Bootstrap actions/Steps"
   }
 }
 

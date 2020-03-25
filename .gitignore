@@ -35,3 +35,6 @@ override.tf.json
 # End of https://www.gitignore.io/api/terraform
 
 backend.config
+
+id_rsa
+id_rsa.pub
