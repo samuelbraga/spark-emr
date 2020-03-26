@@ -28,7 +28,6 @@ variable "core_threshold_down" {}
 # Security group
 variable "emr_master_security_group" {}
 variable "emr_slave_security_group" {}
-variable "service_access_security_group" {}
 
 # IAM config
 variable "emr_ec2_instance_profile" {}

@@ -52,11 +52,6 @@ output "slave_security_group_id" {
   value       = module.security_group_slave.this_security_group_id
 }
 
-output "cluster_security_group_id" {
-  description = "cluster security group id"
-  value       = module.security_group_cluster.this_security_group_id
-}
-
 # KEY
 output "key_name" {
   description = "key pais name"

@@ -8,7 +8,6 @@ resource "aws_emr_cluster" "emr_spark_cluster" {
   ec2_attributes {
     subnet_id  = var.subnet_id
     key_name = var.key_name
-    service_access_security_group = var.service_access_security_group
     emr_managed_master_security_group = var.emr_master_security_group
     emr_managed_slave_security_group = var.emr_slave_security_group
     instance_profile = var.emr_ec2_instance_profile

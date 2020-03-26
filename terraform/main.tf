@@ -111,39 +111,6 @@ module "security_group_slave" {
   }
 }
 
-module "security_group_cluster" {
-  source = "terraform-aws-modules/security-group/aws"
-
-  name        = "${var.name}-cluster"
-  description = "Security group for EMR cluster"
-
-  vpc_id = module.vpc.vpc_id
-
-  ingress_with_cidr_blocks = [
-    {
-      from_port   = 0
-      to_port     = 0
-      protocol    = -1
-      cidr_blocks = "${module.vpc.vpc_cidr_block},0.0.0.0/0"
-    },
-  ]
-
-  egress_with_cidr_blocks = [
-    {
-      from_port   = 0
-      to_port     = 0
-      protocol    = -1
-      cidr_blocks = "0.0.0.0/0"
-    },
-  ]
-
-  tags = {
-    Name        = "emr_slave"
-    Terraform   = "true"
-    Environment = "spark"
-  }
-}
-
 module "key_pair" {
   source   = "./modules/key_pair"
   app_name = var.name
@@ -177,7 +144,6 @@ module "emr" {
 
   emr_master_security_group     = module.security_group_master.this_security_group_id
   emr_slave_security_group      = module.security_group_slave.this_security_group_id
-  service_access_security_group = module.security_group_cluster.this_security_group_id
 
   emr_ec2_instance_profile = module.iam.emr_ec2_instance_profile
   emr_service_role         = module.iam.emr_service_role
