@@ -2,11 +2,30 @@
 aws_region = "us-west-2"
 
 # VPC
-vpc_name = "spark"
-vpc_cidr_block = "10.1.0.0/16"
-private_subnets_cidr = ["10.1.1.0/24", "10.1.2.0/24", "10.1.3.0/24"]
-public_subnets_cidr = ["10.1.101.0/24", "10.1.102.0/24", "10.1.103.0/24"]
+vpc_name             = "spark"
+vpc_cidr_block       = "10.1.0.0/16"
+public_subnets_cidr  = ["10.1.101.0/24"]
 
 # EMR
-name = "spark-samuelbraga"
-name_s3_scripts = "spark-scripts-samuelbraga"
+name                 = "spark-samuelbraga"
+name_s3_scripts      = "spark-scripts-samuelbraga"
+release_label        = "emr-5.16.0"
+applications         = ["Hadoop", "Spark"]
+ebs_root_volume_size = "12"
+
+# Master node configurations
+master_instance_type  = "m4.xlarge"
+master_ebs_size       = "50"
+master_instance_count = 1
+
+# Slave nodes configurations
+core_instance_type  = "m4.xlarge"
+core_instance_count = 1
+core_ebs_size       = "50"
+
+bid_price_core = 0.5
+
+min_instance_core   = 1
+max_instance_core   = 1
+core_threshold_up   = 20
+core_threshold_down = 80
