@@ -41,25 +41,7 @@ module "security_group_master" {
       to_port     = 22
       protocol    = "tcp"
       cidr_blocks = "${module.vpc.vpc_cidr_block},0.0.0.0/0"
-    },
-    {
-      from_port   = 4040
-      to_port     = 4040
-      protocol    = "tcp"
-      cidr_blocks = "${module.vpc.vpc_cidr_block},0.0.0.0/0"
-    },
-    {
-      from_port   = 8888
-      to_port     = 8888
-      protocol    = "tcp"
-      cidr_blocks = "${module.vpc.vpc_cidr_block},0.0.0.0/0"
-    },
-    {
-      from_port   = 20888
-      to_port     = 20888
-      protocol    = "tcp"
-      cidr_blocks = "${module.vpc.vpc_cidr_block},0.0.0.0/0"
-    },
+    }
   ]
 
   egress_with_cidr_blocks = [
