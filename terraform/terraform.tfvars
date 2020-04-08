@@ -9,7 +9,7 @@ public_subnets_cidr  = ["10.1.101.0/24"]
 # EMR
 name                 = "spark-samuelbraga"
 name_s3_scripts      = "spark-scripts-samuelbraga"
-release_label        = "emr-5.16.0"
+release_label        = "emr-6.0.0"
 applications         = ["Hadoop", "Spark"]
 ebs_root_volume_size = "12"
 

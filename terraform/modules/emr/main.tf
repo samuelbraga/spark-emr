@@ -102,31 +102,6 @@ EOF
   service_role = var.emr_service_role
   autoscaling_role = var.emr_autoscaling_role
 
-  bootstrap_action {
-    name = "Bootstrap setup"
-    path = "s3://${var.name_s3_scripts}/scripts/bootstrap_actions.sh"
-  }
-
-  step {
-    name = "Copy script file from s3 and install pyspark"
-    action_on_failure = "CONTINUE"
-
-    hadoop_jar_step {
-      jar  = "command-runner.jar"
-      args = [
-        "aws",
-        "s3",
-        "cp",
-        "s3://${var.name_s3_scripts}/scripts/pyspark_quick_setup.sh",
-        "/home/hadoop/",
-        "&&",
-        "sudo",
-        "bash",
-        "/home/hadoop/pyspark_quick_setup.sh"
-      ]
-    }
-  }
-
   configurations_json = <<EOF
     [
     {
