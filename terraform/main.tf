@@ -17,11 +17,6 @@ module "vpc" {
   }
 }
 
-module "s3_scripts" {
-  source = "./modules/s3_scripts"
-  name   = var.name_s3_scripts
-}
-
 module "iam" {
   source   = "./modules/iam"
   app_name = var.name
@@ -120,7 +115,6 @@ module "emr" {
   source = "./modules/emr"
 
   name                 = var.name
-  name_s3_scripts      = var.name_s3_scripts
   subnet_id            = module.vpc.public_subnets[0]
   key_name             = module.key_pair.key_name
   release_label        = var.release_label
