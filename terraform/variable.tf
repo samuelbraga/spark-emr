@@ -10,7 +10,6 @@ variable "public_subnets_cidr" {
 
 # EMR
 variable "name" {}
-variable "name_s3_scripts" {}
 variable "release_label" {}
 variable "applications" {
   type = list(string)

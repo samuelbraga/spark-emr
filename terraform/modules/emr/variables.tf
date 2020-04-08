@@ -1,6 +1,5 @@
 # ERM config
 variable "name" {}
-variable "name_s3_scripts" {}
 variable "subnet_id" {}
 variable "key_name" {}
 variable "release_label" {}

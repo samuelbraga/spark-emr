@@ -19,12 +19,6 @@ output "public_subnets" {
   value       = module.vpc.public_subnets
 }
 
-# S3 scripts
-output "s3_scripts_id" {
-  description = "id s3 scripts"
-  value       = module.s3_scripts.s3_id
-}
-
 # IAM
 output "emr_service_role" {
   description = "service role EMR"

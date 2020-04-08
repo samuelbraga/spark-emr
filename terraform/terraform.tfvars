@@ -1,5 +1,5 @@
 # AWS
-aws_region = "us-west-2"
+aws_region = "us-east-1"
 
 # VPC
 vpc_name             = "spark"
@@ -8,7 +8,6 @@ public_subnets_cidr  = ["10.1.101.0/24"]
 
 # EMR
 name                 = "spark-samuelbraga"
-name_s3_scripts      = "spark-scripts-samuelbraga"
 release_label        = "emr-6.0.0"
 applications         = ["Hadoop", "Spark"]
 ebs_root_volume_size = "12"
