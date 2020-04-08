@@ -9,7 +9,7 @@ public_subnets_cidr  = ["10.69.101.0/24"]
 # EMR
 name                 = "spark-samuelbraga"
 release_label        = "emr-6.0.0"
-applications         = ["Hadoop", "Spark"]
+applications         = ["Hadoop", "Spark", "Livy"]
 ebs_root_volume_size = "12"
 
 # Master node configurations
